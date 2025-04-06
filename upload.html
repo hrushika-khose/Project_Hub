@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Upload Project - College Project Hub</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/upload.css" />
+    <script src="js/upload.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1>College Project Hub</h1>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search projects..." />
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="upload.html" class="active">Upload Project</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li id="login-btn"><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="upload-section">
+                <h2>Upload Your Project</h2>
+                <p class="section-desc">Share your innovative work with peers and professors</p>
+                
+                <div class="upload-container">
+                    <form id="project-upload-form" action="upload.php" method="post" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="project-title">Project Title*</label>
+                            <input type="text" id="project-title" name="project-title" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="project-description">Project Description*</label>
+                            <textarea id="project-description" name="project-description" rows="5" required></textarea>
+                            <p class="form-help-text">Describe your project, its purpose, and key features</p>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="department">Department*</label>
+                                <select id="department" name="department" required>
+                                    <option value="">Select Department</option>
+                                    <option value="computer-science">Computer Science</option>
+                                    <option value="electronics">Electronics</option>
+                                    <option value="mechanical">Mechanical</option>
+                                    <option value="chemical">Chemical</option>
+                                    <option value="civil">Civil</option>
+                                    <option value="electrical">Electrical</option>
+                                    <option value="biotechnology">Biotechnology</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="semester">Semester*</label>
+                                <select id="semester" name="semester" required>
+                                    <option value="">Select Semester</option>
+                                    <option value="1">1st Semester</option>
+                                    <option value="2">2nd Semester</option>
+                                    <option value="3">3rd Semester</option>
+                                    <option value="4">4th Semester</option>
+                                    <option value="5">5th Semester</option>
+                                    <option value="6">6th Semester</option>
+                                    <option value="7">7th Semester</option>
+                                    <option value="8">8th Semester</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="academic-year">Academic Year*</label>
+                                <select id="academic-year" name="academic-year" required>
+                                    <option value="">Select Year</option>
+                                    <option value="2025">2025</option>
+                                    <option value="2024">2024</option>
+                                    <option value="2023">2023</option>
+                                    <option value="2022">2022</option>
+                                    <option value="2021">2021</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="tags">Tags</label>
+                                <input type="text" id="tags" name="tags" placeholder="e.g., web, database, AI" />
+                                <p class="form-help-text">Separate tags with commas</p>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="team-members">Team Members</label>
+                            <textarea id="team-members" name="team-members" rows="2" placeholder="Name - Student ID, ..."></textarea>
+                            <p class="form-help-text">List all team members</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="project-thumbnail">Project Thumbnail/Image*</label>
+                            <input type="file" id="project-thumbnail" name="project-thumbnail" accept="image/*" required />
+                            <p class="form-help-text">Max: 5MB</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="project-files">Project Files*</label>
+                            <input type="file" id="project-files" name="project-files[]" multiple required />
+                            <p class="form-help-text">Upload .zip, .pdf, etc.</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="demo-video">Demonstration Video</label>
+                            <input type="file" id="demo-video" name="demo-video" accept="video/*" />
+                            <p class="form-help-text">Optional, Max: 100MB</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="research-paper">Research Paper/Documentation</label>
+                            <input type="file" id="research-paper" name="research-paper" accept=".pdf,.doc,.docx" />
+                            <p class="form-help-text">Optional</p>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="agreement" name="agreement" required />
+                            <label for="agreement">I confirm this is my original work and I have permission to share all materials</label>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="reset" class="btn reset-btn">Reset Form</button>
+                            <button type="submit" class="btn primary-btn">Upload Project</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>College Project Hub</h3>
+                    <p>A platform for students to showcase their semester projects</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="upload.html">Upload</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>Email: support@collegeprojhub.edu</p>
+                    <p>Phone: (123) 456-7890</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 College Project Hub. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
