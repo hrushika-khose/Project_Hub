@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - VPKBIET's Project Hub</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="js/script.js" defer></script>
+    <script src="js/profile.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header>
+            <div class="logo">
+                <h1>VPKBIET's Project Hub</h1>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search projects...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="upload.html">Upload</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li id="profile-btn"><a href="profile.html" class="active">Profile</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <div class="profile-container">
+                <div class="profile-header">
+                    <div class="profile-cover"></div>
+                    <div class="profile-avatar">
+                        <img src="images/profile-placeholder.jpg" alt="Profile Avatar">
+                    </div>
+                    <div class="profile-info">
+                        <h2 class="profile-name">Rahul Sharma</h2>
+                        <p class="profile-title">Computer Science Student | Web Developer</p>
+                        
+                        <div class="profile-stats">
+                            <div class="stat">
+                                <div class="stat-value">12</div>
+                                <div class="stat-label">Projects</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">45</div>
+                                <div class="stat-label">Contributions</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">120</div>
+                                <div class="stat-label">Followers</div>
+                            </div>
+                        </div>
+                        
+                        <div class="profile-actions">
+                            <button class="btn primary-btn follow-btn">Follow</button>
+                            <button class="btn secondary-btn message-btn">Message</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile-nav">
+                    <div class="profile-nav-item active" data-tab="projects">Projects</div>
+                    <div class="profile-nav-item" data-tab="about">About</div>
+                    <div class="profile-nav-item" data-tab="education">Education</div>
+                    <div class="profile-nav-item" data-tab="contact">Contact</div>
+                </div>
+
+                <div class="profile-content">
+                    <!-- Projects Section -->
+                    <div class="profile-section active" id="projects">
+                        <h3 class="section-title">My Projects</h3>
+                        <div class="profile-projects">
+                            <div class="project-card">
+                                <div class="project-image" style="background-image: url('images/project1.jpg');"></div>
+                                <div class="project-details">
+                                    <h4 class="project-title">Smart Irrigation System</h4>
+                                    <div class="project-tags">
+                                        <span class="project-tag">IoT</span>
+                                        <span class="project-tag">Arduino</span>
+                                        <span class="project-tag">Electronics</span>
+                                    </div>
+                                    <p class="project-desc">An automated system that monitors soil moisture and controls water flow to optimize irrigation for agricultural fields.</p>
+                                    <div class="project-meta">
+                                        <span>April 2025</span>
+                                        <div class="project-likes"><i class="fas fa-heart"></i> 24</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="project-card">
+                                <div class="project-image" style="background-image: url('images/project2.jpg');"></div>
+                                <div class="project-details">
+                                    <h4 class="project-title">Waste Management App</h4>
+                                    <div class="project-tags">
+                                        <span class="project-tag">Android</span>
+                                        <span class="project-tag">Java</span>
+                                        <span class="project-tag">Firebase</span>
+                                    </div>
+                                    <p class="project-desc">Mobile application to connect waste collectors with households to improve recycling efficiency and reduce landfill waste.</p>
+                                    <div class="project-meta">
+                                        <span>March 2025</span>
+                                        <div class="project-likes"><i class="fas fa-heart"></i> 36</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="project-card">
+                                <div class="project-image" style="background-image: url('images/project3.jpg');"></div>
+                                <div class="project-details">
+                                    <h4 class="project-title">Attendance System using Face Recognition</h4>
+                                    <div class="project-tags">
+                                        <span class="project-tag">Python</span>
+                                        <span class="project-tag">OpenCV</span>
+                                        <span class="project-tag">ML</span>
+                                    </div>
+                                    <p class="project-desc">Automated attendance system using facial recognition to track student presence in classrooms efficiently.</p>
+                                    <div class="project-meta">
+                                        <span>February 2025</span>
+                                        <div class="project-likes"><i class="fas fa-heart"></i> 42</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- About Section -->
+                    <div class="profile-section" id="about">
+                        <h3 class="section-title">About Me</h3>
+                        <div class="about-content">
+                            <p>I'm a passionate Computer Science student at VPKBIET with a focus on web development and IoT applications. I enjoy creating projects that solve real-world problems using technology, and I'm particularly interested in sustainable technology solutions.</p>
+                            <p>During my academic journey, I've participated in multiple hackathons and worked on several team projects. I'm dedicated to continuous learning and expanding my technical skills.</p>
+                        </div>
+
+                        <div class="about-stats">
+                            <h4>Technical Skills</h4>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Web Development (HTML, CSS, JS)</span>
+                                    <span class="skill-percent">90%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 90%;"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Python</span>
+                                    <span class="skill-percent">85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 85%;"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Java</span>
+                                    <span class="skill-percent">80%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 80%;"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Database Management</span>
+                                    <span class="skill-percent">75%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 75%;"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">IoT & Hardware</span>
+                                    <span class="skill-percent">70%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 70%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Education Section -->
+                    <div class="profile-section" id="education">
+                        <h3 class="section-title">Education & Experience</h3>
+                        
+                        <div class="education-wrapper">
+                            <div class="education-item">
+                                <h4 class="education-title">B.Tech in Computer Science & Engineering</h4>
+                                <p class="education-place">VPKBIET, Baramati</p>
+                                <p class="education-date">2022 - 2026</p>
+                                <p class="education-desc">Studying core computer science subjects with specialization in AI and web technologies. Maintained 8.5 CGPA throughout the academic years.</p>
+                            </div>
+
+                            <div class="education-item">
+                                <h4 class="education-title">Higher Secondary Education</h4>
+                                <p class="education-place">New English School & Junior College</p>
+                                <p class="education-date">2020 - 2022</p>
+                                <p class="education-desc">Completed HSC with 92% marks in the Science stream with Mathematics, Physics, and Chemistry as core subjects.</p>
+                            </div>
+                        </div>
+
+                        <h3 class="section-title">Work Experience</h3>
+                        
+                        <div class="experience-wrapper">
+                            <div class="experience-item">
+                                <h4 class="experience-title">Web Development Intern</h4>
+                                <p class="experience-company">TechSolutions Pvt Ltd</p>
+                                <p class="experience-date">May 2024 - August 2024</p>
+                                <p class="experience-desc">Worked on developing responsive web applications using modern JavaScript frameworks. Assisted in implementing CI/CD pipelines for streamlined deployment.</p>
+                            </div>
+
+                            <div class="experience-item">
+                                <h4 class="experience-title">Research Assistant</h4>
+                                <p class="experience-company">VPKBIET Research Lab</p>
+                                <p class="experience-date">January 2024 - Present</p>
+                                <p class="experience-desc">Assisting faculty with research in IoT applications for agricultural automation. Developing prototypes and conducting field tests for data collection.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Section -->
+                    <div class="profile-section" id="contact">
+                        <h3 class="section-title">Contact Information</h3>
+                        
+                        <div class="contact-info">
+                            <div class="contact-info-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <div class="contact-label">Email</div>
+                                    <div class="contact-value">rahul.sharma@vpkbiet.edu</div>
+                                </div>
+                            </div>
+
+                            <div class="contact-info-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <div class="contact-label">Phone</div>
+                                    <div class="contact-value">+91 98765 43210</div>
+                                </div>
+                            </div>
+
+                            <div class="contact-info-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <div class="contact-label">Location</div>
+                                    <div class="contact-value">Baramati, Maharashtra, India</div>
+                                </div>
+                            </div>
+
+                            <div class="contact-info-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-globe"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <div class="contact-label">Website</div>
+                                    <div class="contact-value">rahulsharma.tech</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3 class="section-title">Send Message</h3>
+                        
+                        <form class="contact-form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" placeholder="Your Email" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Subject" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" placeholder="Your Message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn primary-btn">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>VPKBIET's Project Hub</h3>
+                    <p>A platform for students to showcase their semester projects</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="upload.html">Upload</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>Email: support@vpkbiet.edu</p>
+                    <p>Phone: (123) 456-7890</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 VPKBIET's Project Hub. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

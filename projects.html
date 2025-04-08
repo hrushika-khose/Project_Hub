@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Projects - College Project Hub</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/projects.css">
+    <script src="js/projects.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section (Same as other pages) -->
+        <header>
+            <div class="logo">
+                <h1>VPKBIET's Project Hub</h1>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search projects...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projects.html" class="active">Projects</a></li>
+                    <li><a href="upload.html">Upload</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li id="login-btn"><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <section class="projects-header">
+                <h2>Browse Projects</h2>
+                <p>Discover innovative projects from students across departments</p>
+            </section>
+
+            <section class="filter-section">
+                <div class="filters">
+                    <div class="filter-group">
+                        <label for="department-filter">Department</label>
+                        <select id="department-filter">
+                            <option value="all">All Departments</option>
+                            <option value="computer-science">Computer Science</option>
+                            <option value="electronics">Electronics</option>
+                            <option value="mechanical">Mechanical</option>
+                            <option value="chemical">Chemical</option>
+                            <option value="civil">Civil</option>
+                            <option value="electrical">Electrical</option>
+                            <option value="biotechnology">Biotechnology</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="semester-filter">Semester</label>
+                        <select id="semester-filter">
+                            <option value="all">All Semesters</option>
+                            <option value="1">1st Semester</option>
+                            <option value="2">2nd Semester</option>
+                            <option value="3">3rd Semester</option>
+                            <option value="4">4th Semester</option>
+                            <option value="5">5th Semester</option>
+                            <option value="6">6th Semester</option>
+                            <option value="7">7th Semester</option>
+                            <option value="8">8th Semester</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="year-filter">Academic Year</label>
+                        <select id="year-filter">
+                            <option value="all">All Years</option>
+                            <option value="2025">2025</option>
+                            <option value="2024">2024</option>
+                            <option value="2023">2023</option>
+                            <option value="2022">2022</option>
+                            <option value="2021">2021</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="sort-by">Sort By</label>
+                        <select id="sort-by">
+                            <option value="recent">Most Recent</option>
+                            <option value="popular">Most Popular</option>
+                            <option value="rating">Highest Rated</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="active-filters">
+                    <div class="tag">Computer Science <span class="remove-tag">×</span></div>
+                    <div class="tag">2023 <span class="remove-tag">×</span></div>
+                    <button id="clear-filters">Clear All</button>
+                </div>
+            </section>
+
+            <section class="projects-grid">
+                <!-- Project cards will be generated dynamically -->
+                <div class="project-card">
+                    <div class="project-thumbnail">
+                        <img src="images/project1.jpg" alt="Smart Home Automation">
+                        <div class="department-tag">Computer Science</div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Smart Home Automation System</h3>
+                        <div class="project-meta">
+                            <span><i class="fas fa-user"></i> John Doe, Alice Smith</span>
+                            <span><i class="fas fa-calendar"></i> 6th Semester, 2023</span>
+                        </div>
+                        <p class="project-desc">A comprehensive IoT-based system for automating home appliances using voice commands and mobile application.</p>
+                        <div class="project-tags">
+                            <span>IoT</span>
+                            <span>Mobile App</span>
+                            <span>Arduino</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="project-details.html?id=1" class="btn view-btn">View Details</a>
+                            <button class="btn save-btn"><i class="far fa-bookmark"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-thumbnail">
+                        <img src="images/project2.jpg" alt="Waste Management System">
+                        <div class="department-tag">Civil</div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Smart Waste Management System</h3>
+                        <div class="project-meta">
+                            <span><i class="fas fa-user"></i> Sarah Johnson, Mike Chen</span>
+                            <span><i class="fas fa-calendar"></i> 7th Semester, 2023</span>
+                        </div>
+                        <p class="project-desc">An innovative system designed to optimize waste collection routes and monitor fill levels of garbage bins in real-time.</p>
+                        <div class="project-tags">
+                            <span>Sustainability</span>
+                            <span>IoT</span>
+                            <span>GIS</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="project-details.html?id=2" class="btn view-btn">View Details</a>
+                            <button class="btn save-btn"><i class="far fa-bookmark"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-thumbnail">
+                        <img src="images/project3.jpg" alt="Renewable Energy">
+                        <div class="department-tag">Electrical</div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Hybrid Renewable Energy System</h3>
+                        <div class="project-meta">
+                            <span><i class="fas fa-user"></i> Robert Kim, Emily Patel</span>
+                            <span><i class="fas fa-calendar"></i> 8th Semester, 2024</span>
+                        </div>
+                        <p class="project-desc">Integration of solar and wind energy systems with intelligent switching mechanism for optimal energy production.</p>
+                        <div class="project-tags">
+                            <span>Renewable</span>
+                            <span>Solar</span>
+                            <span>Wind</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="project-details.html?id=3" class="btn view-btn">View Details</a>
+                            <button class="btn save-btn"><i class="far fa-bookmark"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-thumbnail">
+                        <img src="images/project4.jpg" alt="Machine Learning">
+                        <div class="department-tag">Computer Science</div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Machine Learning for Medical Diagnosis</h3>
+                        <div class="project-meta">
+                            <span><i class="fas fa-user"></i> David Wilson, Lisa Chang</span>
+                            <span><i class="fas fa-calendar"></i> 7th Semester, 2024</span>
+                        </div>
+                        <p class="project-desc">A deep learning model to assist doctors in early diagnosis of diseases based on medical imaging and patient history.</p>
+                        <div class="project-tags">
+                            <span>AI/ML</span>
+                            <span>Healthcare</span>
+                            <span>Computer Vision</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="project-details.html?id=4" class="btn view-btn">View Details</a>
+                            <button class="btn save-btn"><i class="far fa-bookmark"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-thumbnail">
+                        <img src="images/project5.jpg" alt="3D Printing">
+                        <div class="department-tag">Mechanical</div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Customizable Prosthetic Hand Using 3D Printing</h3>
+                        <div class="project-meta">
+                            <span><i class="fas fa-user"></i> Thomas Brown, Nina Rodriguez</span>
+                            <span><i class="fas fa-calendar"></i> 6th Semester, 2023</span>
+                        </div>
+                        <p class="project-desc">Low-cost, customizable prosthetic hand design that can be 3D printed and adjusted for individual needs.</p>
+                        <div class="project-tags">
+                            <span>3D Printing</span>
+                            <span>Prosthetics</span>
+                            <span>Biomedical</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="project-details.html?id=5" class="btn view-btn">View Details</a>
+                            <button class="btn save-btn"><i class="far fa-bookmark"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-thumbnail">
+                        <img src="images/project6.jpg" alt="Chemical Process">
+                        <div class="department-tag">Chemical</div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Eco-friendly Plastic Alternative</h3>
+                        <div class="project-meta">
+                            <span><i class="fas fa-user"></i> Hannah Foster, Raj Patel</span>
+                            <span><i class="fas fa-calendar"></i> 8th Semester, 2024</span>
+                        </div>
+                        <p class="project-desc">Development of biodegradable polymer from agricultural waste that can replace single-use plastics.</p>
+                        <div class="project-tags">
+                            <span>Biodegradable</span>
+                            <span>Polymer</span>
+                            <span>Sustainability</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="project-details.html?id=6" class="btn view-btn">View Details</a>
+                            <button class="btn save-btn"><i class="far fa-bookmark"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="pagination">
+                <button class="pagination-btn prev-btn" disabled><i class="fas fa-chevron-left"></i> Previous</button>
+                <div class="pagination-numbers">
+                    <a href="#" class="active">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                    <span>...</span>
+                    <a href="#">10</a>
+                </div>
+                <button class="pagination-btn next-btn">Next <i class="fas fa-chevron-right"></i></button>
+            </div>
+        </main>
+
+        <!-- Footer (Same as other pages) -->
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>College Project Hub</h3>
+                    <p>A platform for students to showcase their semester projects</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="upload.html">Upload</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>Email: support@collegeprojhub.edu</p>
+                    <p>Phone: (123) 456-7890</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 College Project Hub. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

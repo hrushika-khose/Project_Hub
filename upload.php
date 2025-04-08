@@ -17,67 +17,61 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    // Fetch form values
-    $title = $_POST["project-title"] ?? '';
-    $description = $_POST["project-description"] ?? '';
-    $department = $_POST["department"] ?? '';
-    $semester = $_POST["semester"] ?? '';
-    $academic_year = $_POST["academic-year"] ?? '';
-    $tags = $_POST["tags"] ?? '';
-    $team_members = $_POST["team-members"] ?? '';
 
-    // File upload directory
-    $uploadDir = "uploads/";
-    if (!is_dir($uploadDir)) {
-        mkdir($uploadDir, 0777, true);
+function saveFile($inputName) {
+    global $uploadDir;
+    if (isset($_FILES[$inputName]) && $_FILES[$inputName]['error'] === 0) {
+        $fileTmp = $_FILES[$inputName]['tmp_name'];
+        $fileName = basename($_FILES[$inputName]['name']);
+        $targetPath = $uploadDir . uniqid() . '_' . $fileName;
+        move_uploaded_file($fileTmp, $targetPath);
+        return $targetPath;
     }
-
-    function saveFile($field) {
-        global $uploadDir;
-        if (isset($_FILES[$field]) && $_FILES[$field]['error'] === UPLOAD_ERR_OK) {
-            $fileName = time() . "_" . basename($_FILES[$field]['name']);
-            $targetPath = $uploadDir . $fileName;
-            if (move_uploaded_file($_FILES[$field]['tmp_name'], $targetPath)) {
-                return $targetPath;
-            }
-        }
-        return null;
-    }
-
-    // Save files and get paths
-    $image_path = saveFile("project-thumbnail");
-    $project_file_path = saveFile("project-files");
-    $demo_video_path = saveFile("demo-video");
-    $documentation_path = saveFile("research-paper");
-
-    // Insert query
-    $stmt = $conn->prepare("INSERT INTO projects 
-        (title, description, department, semester, academic_year, tags, team_members, image_path, project_file_path, demo_video_path, documentation_path) 
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-
-    if ($stmt) {
-        $stmt->bind_param(
-            "sssssssssss", 
-            $title, $description, $department, $semester, $academic_year,
-            $tags, $team_members, $image_path, $project_file_path, $demo_video_path, $documentation_path
-        );
-
-        if ($stmt->execute()) {
-            echo "✅ Project uploaded successfully!";
-        } else {
-            echo "❌ Execution error: " . $stmt->error;
-        }
-
-        $stmt->close();
-    } else {
-        echo "❌ SQL prepare error: " . $conn->error;
-    }
-
-    $conn->close();
-} else {
-    echo "❌ Invalid request method.";
+    return null;
 }
 
+// Save multiple files
+function saveMultipleFiles($inputName) {
+    global $uploadDir;
+    $paths = [];
+    if (!empty($_FILES[$inputName]['name'][0])) {
+        foreach ($_FILES[$inputName]['name'] as $i => $name) {
+            $tmpName = $_FILES[$inputName]['tmp_name'][$i];
+            $newName = $uploadDir . uniqid() . '_' . basename($name);
+            move_uploaded_file($tmpName, $newName);
+            $paths[] = $newName;
+        }
+    }
+    return $paths;
+}
 
+// Collect form data
+$project = [
+    "title" => $_POST["project-title"],
+    "description" => $_POST["project-description"],
+    "department" => $_POST["department"],
+    "semester" => $_POST["semester"],
+    "year" => $_POST["academic-year"],
+    "tags" => $_POST["tags"],
+    "team" => $_POST["team-members"],
+    "thumbnail" => saveFile("project-thumbnail"),
+    "project_files" => saveMultipleFiles("project-files"),
+    "demo_video" => saveFile("demo-video"),
+    "research_paper" => saveFile("research-paper"),
+    "timestamp" => date("Y-m-d H:i:s")
+];
+
+// Save to JSON
+$jsonFile = 'projects.json';
+$projects = file_exists($jsonFile) ? json_decode(file_get_contents($jsonFile), true) : [];
+$projects[] = $project;
+file_put_contents($jsonFile, json_encode($projects, JSON_PRETTY_PRINT));
+
+// Redirect to projects page
+header("Location: projects.php");
+exit();
 ?>
+
+
+
+

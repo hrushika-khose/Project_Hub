@@ -1,7 +1,17 @@
 
 <?php
-include 'config.php'; // Include database connection
-
+ // Include database connection
+ error_reporting(E_ALL);
+ ini_set('display_errors', 1);
+ 
+ // Include DB config
+ $host = "127.0.0.1";
+ $user = "root";
+ $pass = "";
+ $dbname = "project_hub";
+ $port = 3308; // or 3307, depending on what you saw in my.ini
+ 
+ $conn = new mysqli($host, $user, $pass, $dbname, $port);
 // Get filter parameters if they exist
 $department = isset($_GET['department']) ? $_GET['department'] : '';
 $semester = isset($_GET['semester']) ? $_GET['semester'] : '';
