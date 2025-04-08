@@ -3,7 +3,7 @@ $host = "127.0.0.1";
 $user = "root";
 $pass = "";
 $dbname = "project_hub";
-$port = 3308; // or 3307, depending on what you saw in my.ini
+$port = 3308;
 
 $conn = new mysqli($host, $user, $pass, $dbname, $port);
 
