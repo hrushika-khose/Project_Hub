@@ -1,6 +1,13 @@
 <?php
-<?php
-include 'config.php';
+ error_reporting(E_ALL);
+ ini_set('display_errors', 1);
+ $host = "127.0.0.1";
+ $user = "root";
+ $pass = "";
+ $dbname = "project_hub";
+ $port = 3308; // or 3307, depending on what you saw in my.ini
+ 
+ $conn = new mysqli($host, $user, $pass, $dbname, $port);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = trim($_POST['username']);

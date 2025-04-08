@@ -1,11 +1,79 @@
-<!-- about.html -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>About Project Hub</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Project Hub</title>
+  <link rel="stylesheet" href="css/about.css" />
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <h2>About Project Hub</h2>
-    <p>This platform allows students to upload and explore semester projects, categorized by department and year.</p>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1>VPKBIET's Project Hub</h1>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search projects..." />
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="upload.html" class="active">Upload</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li id="login-btn"><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+    </header>
+</main>
+  <div class="about-wrapper">
+    <div class="about-box">
+      <div class="text-section">
+        <h1>About Project Hub</h1>
+        <p>
+          Project Hub is a platform designed for students and faculty to easily upload, explore, and assess academic projects.
+          It promotes collaboration and innovation by organizing projects by department, year, and domain.
+        </p>
+        <ul>
+          <li>🎓 Upload and manage student projects</li>
+          <li>📂 Organized by department & year</li>
+          <li>🔍 Explore and discover ideas</li>
+          
+        </ul>
+      </div>
+      <div class="image-section">
+        <img src="images/college.jpeg" alt="Project Collaboration" />
+      </div>
+    </div>
+  </div>
+</main>
+  <footer>
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>College Project Hub</h3>
+            <p>A platform for students to showcase their semester projects</p>
+        </div>
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="upload.html">Upload</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Contact</h3>
+            <p>Email: support@collegeprojhub.edu</p>
+            <p>Phone: (123) 456-7890</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 College Project Hub. All rights reserved.</p>
+    </div>
+</footer>
+</div>
 </body>
 </html>
