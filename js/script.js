@@ -7,14 +7,14 @@ document.addEventListener("DOMContentLoaded", function() {
     const loginBtn = document.getElementById('login-btn');
     if (loginBtn) {
       if (isLoggedIn && username) {
-        loginBtn.innerHTML = `<a href="profile.html">${username}</a>`;
+        loginBtn.innerHTML = `<a href="profile.php">${username}</a>`;
       } else {
         loginBtn.innerHTML = `<a href="login.html">Login</a>`;
       }
     }
     
     // Add auth check for protected links
-    const protectedLinks = document.querySelectorAll('a[href="projects.html"], a[href="upload.html"]');
+    const protectedLinks = document.querySelectorAll('a[href="projects.php"], a[href="upload.html"]');
     protectedLinks.forEach(link => {
       link.addEventListener('click', function(e) {
         if (!isLoggedIn) {
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function() {
     
     // Check if current page is protected
     const currentPath = window.location.pathname;
-    const protectedPaths = ['/projects.html', '/upload.html'];
+    const protectedPaths = ['/projects.php', '/upload.html'];
     
     const protectedPathCheck = protectedPaths.some(path => 
       currentPath.endsWith(path) || 
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function() {
       
       if (loginBtn && isLoggedIn && username) {
         console.log("Retry update of login button");
-        loginBtn.innerHTML = `<a href="profile.html">${username}</a>`;
+        loginBtn.innerHTML = `<a href="profile.php">${username}</a>`;
       }
     }, 100);
   });

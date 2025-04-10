@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/upload.css" />
     <script src="js/upload.js" defer></script>
     <script src="js/script.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <div class="container">
@@ -22,7 +23,7 @@
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="projects.php">Projects</a></li>
                     <li><a href="upload.html" class="active">Upload</a></li>
                     <li><a href="about.html">About</a></li>
                     <li id="login-btn"><a href="login.html">Login</a></li>
@@ -36,6 +37,7 @@
                 <p class="section-desc">Share your innovative work with peers and professors</p>
                 
                 <div class="upload-container">
+                   
                     <form id="project-upload-form" action="upload.php" method="post" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="project-title">Project Title*</label>
@@ -140,6 +142,7 @@
                             <button type="submit" class="btn primary-btn">Upload Project</button>
                         </div>
                     </form>
+              
                 </div>
             </section>
         </main>
@@ -154,7 +157,7 @@
                     <h3>Quick Links</h3>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="projects.php">Projects</a></li>
                         <li><a href="upload.html">Upload</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>

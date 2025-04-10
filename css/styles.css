@@ -188,17 +188,32 @@ nav ul li a:hover, nav ul li a.active {
 }
 
 .category-card {
-    background-color: white;
-    padding: 30px 20px;
-    border-radius: 8px;
-    box-shadow: var(--shadow);
-    text-align: center;
-    transition: transform 0.3s ease;
+    width: 300px;
+    height: 250px;
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.cs-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
 .category-card:hover {
     transform: translateY(-10px);
 }
+/*Individual projects*/
+
 
 .category-icon {
     font-size: 2.5rem;

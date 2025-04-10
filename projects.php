@@ -70,7 +70,7 @@ $result = $conn->query($sql);
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="projects.php" class="active">Projects</a></li>
-                    <li><a href="upload.html">Upload Project</a></li>
+                    <li><a href="upload.html">Upload</a></li>
                     <li><a href="about.html">About</a></li>
                     <li id="login-btn"><a href="login.html">Login</a></li>
                 </ul>
