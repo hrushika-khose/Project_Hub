@@ -23,7 +23,7 @@
   
   .image-section {
     flex: 1;
-    background-color: #a855f7;
+    background-color: #001060;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -44,7 +44,7 @@
   }
   
   .form-section h2 {
-    color: #7e22ce;
+    color: #001060;
     margin-bottom: 30px;
     font-size: 32px;
     font-weight: bold;
@@ -54,14 +54,14 @@
     width: 100%;
     padding: 14px;
     margin: 10px 0;
-    border: 2px solid #a855f7;
+    border: 2px solid #001060;
     border-radius: 8px;
     outline: none;
     font-size: 16px;
   }
   
   button {
-    background: linear-gradient(to right, #a855f7, #6b21a8);
+    background: linear-gradient(to right, #001060, #001060);
     color: #fff;
     padding: 14px;
     width: 100%;
@@ -83,7 +83,7 @@
   }
   
   .form-section a {
-    color: #7e22ce;
+    color: #162c9b;
     text-decoration: none;
   }
   

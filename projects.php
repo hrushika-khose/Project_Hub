@@ -52,6 +52,7 @@ $result = $conn->query($sql);
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/projects.css">
     <script src="js/projects.js" defer></script>
+    <script src="js/script.js" defer></script>
 </head>
 <body>
     <div class="container">
@@ -60,19 +61,14 @@ $result = $conn->query($sql);
             <div class="logo">
                 <h1>VPKBIET's Project Hub</h1>
             </div>
-            <div class="search-bar">
-                <form action="projects.php" method="get">
-                    <input type="text" name="search" placeholder="Search projects..." value="<?php echo htmlspecialchars($search); ?>">
-                    <button type="submit"><i class="fas fa-search"></i></button>
-                </form>
-            </div>
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="projects.php" class="active">Projects</a></li>
                     <li><a href="upload.html">Upload</a></li>
                     <li><a href="about.html">About</a></li>
-                    <li id="login-btn"><a href="login.html">Login</a></li>
+                    <div id="login-btn"><a href="login.html">Login</a></div>
+
                 </ul>
             </nav>
         </header>

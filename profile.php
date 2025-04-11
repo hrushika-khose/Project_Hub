@@ -59,13 +59,9 @@ $project_count = $result_projects->num_rows;
     <div class="container">
         <!-- Header Section -->
         <header>
-            <div class="logo">
-                <h1>VPKBIET's Project Hub</h1>
-            </div>
-            <div class="search-bar">
-                <input type="text" placeholder="Search projects...">
-                <button type="submit"><i class="fas fa-search"></i></button>
-            </div>
+        <div class="logo">
+            <h1>VPKBIET's Project Hub</h1>
+        </div>
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
